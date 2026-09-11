@@ -14,7 +14,7 @@ themes.js         named design templates (colors, stamp icon, card pattern)
 letters-data.js   <-- the file you'll touch most often, day to day
 ```
 
-## Adding or editing letters
+## Note to self: On adding or editing letters
 
 Open `letters-data.js`. Everything lives in one object:
 
