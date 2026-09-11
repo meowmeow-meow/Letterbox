@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>my love letters :3</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div id="scene-container"></div>
+
+  <!-- soft vignette / mesh background sits behind the three.js canvas -->
+  <div id="bg-wash"></div>
+
+  <header id="site-title">
+    <span class="title-main">my love letters</span>
+    <span class="title-sub">walk up to the mailbox, type your name :3</span>
+  </header>
+
+  <!-- little hint bubble that changes depending on state -->
+  <div id="hint-bubble" class="hint-bubble">type your name, then press <kbd>enter</kbd></div>
+
+  <!-- swipe-up prompt shown once the stamp is removed -->
+  <div id="swipe-prompt" class="swipe-prompt hidden">
+    <div class="swipe-arrow">↑</div>
+    <div>swipe up / drag up to open the letter</div>
+  </div>
+
+  <!-- password modal -->
+  <div id="password-modal" class="modal hidden">
+    <div class="modal-card">
+      <div class="modal-envelope-icon">💌</div>
+      <h2 id="password-title">this letter is locked</h2>
+      <p class="modal-sub">enter the secret password to read it</p>
+      <input id="password-input" type="password" autocomplete="off" placeholder="•••••••" />
+      <div id="password-error" class="password-error hidden">that's not it — try again</div>
+      <button id="password-submit">unlock</button>
+    </div>
+  </div>
+
+  <!-- final letter reading overlay -->
+  <div id="letter-modal" class="modal hidden">
+    <div class="letter-paper">
+      <button id="letter-close" aria-label="close">×</button>
+      <div id="letter-body" class="letter-body"></div>
+      <div id="letter-signature" class="letter-signature"></div>
+    </div>
+  </div>
+
+  <div id="not-found-toast" class="toast hidden">no letter found for that name yet :(</div>
+
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+    }
+  }
+  </script>
+  <script type="module" src="main.js"></script>
+</body>
+</html>
